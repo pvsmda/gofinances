@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import AppLoading from "expo-app-loading";
 
 import theme from "./src/global/styles/theme"; //arquivo onde estão as variações das cores
-import { Register } from "./src/screens/Register"; //componente da aplicação
+import { CategorySelect } from "./src/screens/CategorySelect";
 
 import {
   useFonts, //useFonts pra poder utilizar as fontes
@@ -24,7 +24,7 @@ export default function App() {
   } //Se o fontsLoaded não carregar, permanecerá a tela de splash até as fontes carregarem
   return (
     <ThemeProvider theme={theme}>
-      <Register />
+      <CategorySelect />
     </ThemeProvider>
   );
 }
