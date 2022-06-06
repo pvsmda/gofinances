@@ -3,7 +3,8 @@ import { ThemeProvider } from "styled-components";
 import AppLoading from "expo-app-loading";
 
 import theme from "./src/global/styles/theme"; //arquivo onde estão as variações das cores
-import { Register } from "./src/screens/Register";
+
+import { NavigationContainer } from "@react-navigation/native";
 
 import {
   useFonts, //useFonts pra poder utilizar as fontes
@@ -11,6 +12,7 @@ import {
   Poppins_500Medium, //Fonte 500 , tamanho medium
   Poppins_700Bold, //Fonte 700, tamanho bold
 } from "@expo-google-fonts/poppins";
+import { AppRoutes } from "./src/routes/app.routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -24,7 +26,9 @@ export default function App() {
   } //Se o fontsLoaded não carregar, permanecerá a tela de splash até as fontes carregarem
   return (
     <ThemeProvider theme={theme}>
-      <Register />
+      <NavigationContainer>
+        <AppRoutes />
+      </NavigationContainer>
     </ThemeProvider>
   );
 }
