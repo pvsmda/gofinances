@@ -3,6 +3,7 @@ import "intl/locale-data/jsonp/pt-BR";
 
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import { StatusBar } from "react-native";
 import AppLoading from "expo-app-loading";
 
 import theme from "./src/global/styles/theme"; //arquivo onde estão as variações das cores
@@ -30,6 +31,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <NavigationContainer>
+        <StatusBar barStyle="light-content" />
         <AppRoutes />
       </NavigationContainer>
     </ThemeProvider>
