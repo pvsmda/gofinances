@@ -8,7 +8,7 @@ import AppLoading from "expo-app-loading";
 
 import theme from "./src/global/styles/theme"; //arquivo onde estão as variações das cores
 
-import { NavigationContainer } from "@react-navigation/native";
+// import { NavigationContainer } from "@react-navigation/native";
 
 import {
   useFonts, //useFonts pra poder utilizar as fontes
@@ -19,6 +19,7 @@ import {
 import { AppRoutes } from "./src/routes/app.routes";
 import { SignIn } from "./src/screens/SignIn";
 import { AuthProvider } from "./src/hooks/auth";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -32,12 +33,10 @@ export default function App() {
   } //Se o fontsLoaded não carregar, permanecerá a tela de splash até as fontes carregarem
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <StatusBar translucent backgroundColor="#5633d3" />
-        <AuthProvider>
-          <SignIn />
-        </AuthProvider>
-      </NavigationContainer>
+      <StatusBar translucent backgroundColor="#5633d3" />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </ThemeProvider>
   );
 }
