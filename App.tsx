@@ -16,10 +16,9 @@ import {
   Poppins_500Medium, //Fonte 500 , tamanho medium
   Poppins_700Bold, //Fonte 700, tamanho bold
 } from "@expo-google-fonts/poppins";
-import { AppRoutes } from "./src/routes/app.routes";
+// import { AppRoutes } from "./src/routes/app.routes";
+import { NavigationContainer } from "@react-navigation/native";
 import { SignIn } from "./src/screens/SignIn";
-import { AuthProvider } from "./src/hooks/auth";
-import { Routes } from "./src/routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -33,10 +32,10 @@ export default function App() {
   } //Se o fontsLoaded não carregar, permanecerá a tela de splash até as fontes carregarem
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar translucent backgroundColor="#5633d3" />
-      <AuthProvider>
-        <Routes />
-      </AuthProvider>
+      <NavigationContainer>
+        <StatusBar translucent backgroundColor="#5633d3" />
+        <SignIn />
+      </NavigationContainer>
     </ThemeProvider>
   );
 }
