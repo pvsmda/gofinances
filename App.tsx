@@ -9,8 +9,6 @@ import AppLoading from "expo-app-loading";
 
 import theme from "./src/global/styles/theme"; //arquivo onde estão as variações das cores
 
-// import { NavigationContainer } from "@react-navigation/native";
-
 import {
   useFonts, //useFonts pra poder utilizar as fontes
   Poppins_400Regular, //Fonte 400, tamanho normal
@@ -18,9 +16,11 @@ import {
   Poppins_700Bold, //Fonte 700, tamanho bold
 } from "@expo-google-fonts/poppins";
 // import { AppRoutes } from "./src/routes/app.routes";
-import { NavigationContainer } from "@react-navigation/native";
+// import { NavigationContainer } from "@react-navigation/native";
 import { SignIn } from "./src/screens/SignIn";
 import { AuthProvider } from "./src/hooks/auth";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -33,13 +33,13 @@ export default function App() {
     return <AppLoading />; //Enquanto não carregar as fontes retorna o AppLoading
   } //Se o fontsLoaded não carregar, permanecerá a tela de splash até as fontes carregarem
   return (
-    <ThemeProvider theme={theme}>
-      <NavigationContainer>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeProvider theme={theme}>
         <StatusBar translucent backgroundColor="#5633d3" />
         <AuthProvider>
-          <SignIn />
+          <Routes />
         </AuthProvider>
-      </NavigationContainer>
-    </ThemeProvider>
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }
