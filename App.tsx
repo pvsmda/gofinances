@@ -18,7 +18,7 @@ import {
 // import { AppRoutes } from "./src/routes/app.routes";
 // import { NavigationContainer } from "@react-navigation/native";
 import { SignIn } from "./src/screens/SignIn";
-import { AuthProvider } from "./src/hooks/auth";
+import { AuthProvider, useAuth } from "./src/hooks/auth";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Routes } from "./src/routes";
 
@@ -29,7 +29,9 @@ export default function App() {
     Poppins_700Bold,
   }); // Garantir que as fontes vão carregar no dispositivo de qualquer usuário
 
-  if (!fontsLoaded) {
+  const { userStorageLoading } = useAuth();
+
+  if (!fontsLoaded || userStorageLoading) {
     return <AppLoading />; //Enquanto não carregar as fontes retorna o AppLoading
   } //Se o fontsLoaded não carregar, permanecerá a tela de splash até as fontes carregarem
   return (
