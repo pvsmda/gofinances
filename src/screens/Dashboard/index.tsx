@@ -123,10 +123,7 @@ export function Dashboard() {
       "negative",
     );
 
-    const TotalInterval =
-      lastTransactionsExpensives === 0
-        ? "Não há transações"
-        : `01 a ${lastTransactionExpensives}`;
+    const TotalInterval = `01 a ${lastTransactionExpensives}`;
 
     const total = entriesTotal - expensiveTotal;
 
@@ -136,20 +133,14 @@ export function Dashboard() {
           style: "currency",
           currency: "BRL",
         }),
-        lastTransaction:
-          lastTransactionEntries === 0
-            ? "Não há transações"
-            : `Ultima entrada dia ${lastTransactionEntries}`,
+        lastTransaction: `Última entrada dia ${lastTransactionEntries}`,
       },
       expensive: {
         amount: expensiveTotal.toLocaleString("pt-BR", {
           style: "currency",
           currency: "BRL",
         }),
-        lastTransaction:
-          lastTransactionExpensives === 0
-            ? "Não há transações"
-            : `Ultima saída dia ${lastTransactionExpensives}`,
+        lastTransaction: `Última saída dia ${lastTransactionExpensives}`,
       },
       total: {
         amount: total.toLocaleString("pt-BR", {
