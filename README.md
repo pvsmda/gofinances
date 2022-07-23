@@ -36,7 +36,7 @@ $ expo start
 
 ## 👨🏻‍💻 Deploy da Aplicação
 
-<img src="https://github.com/pvsmda/gofinances/blob/main/Design%20sem%20nome.gif?raw=true" alt="screenshot" width=700px height=700px/>
+<img src="https://github.com/pvsmda/gofinances/blob/main/Design%20sem%20nome.gif?raw=true" alt="screenshot" width=300px height=400px/>
 
 ## 📝 Licença
 
