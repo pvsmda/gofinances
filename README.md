@@ -36,8 +36,7 @@ $ expo start
 
 ## 👨🏻‍💻 Deploy da Aplicação
 
-<img src="https://github.com/pvsmda/gofinances/blob/main/Design%20sem%20nome.gif?raw=true" alt="screenshot" width=300px height=400px/>
-
+<img src="https://github.com/pvsmda/gofinances/blob/main/Design%20sem%20nome.gif?raw=true" alt="screenshot" width=300px height=600px/>
 ## 📝 Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](.github/LICENSE.md) para mais detalhes.
